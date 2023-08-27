@@ -1,6 +1,6 @@
 const startbtn = document.querySelector('.btn-home');
 const startquez = document.querySelector('.start-quiz');
-const exitbtn = document.querySelector('.exit-btn');
+const prebtn = document.querySelector('.pre-btn');
 const nextbtn = document.querySelector('.next-btn');
 const quizsec = document.querySelector('quiz-sec');
 
@@ -11,8 +11,16 @@ startbtn.addEventListener('click', () => {
 });
 
 
-exitbtn.addEventListener('click', () => {
-    startquez.classList.remove('active');
+prebtn.addEventListener('click', () => {
+    questionCount--;
+
+    if (questionCount < 1) {
+
+        console.log(questionCount);
+        questionCount = 1;
+    }
+
+    showQuestion(questionCount);
 });
 
 nextbtn.addEventListener('click', () => {
