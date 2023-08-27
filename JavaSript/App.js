@@ -15,7 +15,7 @@ startbtn.addEventListener('click', () => {
 
 prebtn.addEventListener('click', () => {
     questionCount--;
-
+    nextbtn.innerHTML = `Next`;
     if (questionCount < 1) {
 
         console.log(questionCount);
@@ -39,7 +39,12 @@ nextbtn.addEventListener('click', () => {
         questionCounter(questionNum);
     } else {
 
-        console.log('complated')
+        // nextbtn.classList.add('reulte');
+        // const result = document.querySelector('.result');
+        nextbtn.innerHTML = `result`;
+        console.log('complated');
+        result();
+
     }
 });
 
@@ -80,16 +85,28 @@ function showQuestion(index) {
 
 function optionSelected(answer) {
     let userAnswer = answer.innerHTML;
-    console.log(typeof (userAnswer))
     let currectAnswer = questions[questionCount].answer;
-    console.log(typeof (currectAnswer));
-    if (userAnswer === currectAnswer) {
+    let alloption = optionlist.children.length;
+
+    // console.log(typeof (currectAnswer));
+    if (userAnswer == currectAnswer) {
         console.log('yes');
-        option.classList.add('currect')
+        answer.classList.add('currect');
     } else {
-        console.log('no');
+        // console.log('no');
+        answer.classList.add('incurrect');
     }
 
+
+    for (let i = 0; i < alloption; i++) {
+        optionlist.children[i].classList.add('disable');
+
+    }
+
+}
+
+function result() {
+    console.log('result')
 }
 
 

@@ -110,6 +110,25 @@ body {
 
 }
 
+.option-list .option.currect{
+    background: #eccee2;
+    color: rgb(15, 195, 15);
+    border-color: rgb(15, 195, 15) ;
+
+}
+
+.option-list .option.incurrect{
+    background: #eccee2;
+    color: rgb(218, 32, 32);
+    border-color: rgb(218, 32, 32);
+}
+
+.option-list .option.disable{
+    pointer-events: none;
+}
+
+
+
 .start-quiz.active{
     opacity: 1;
     pointer-events: auto;

@@ -2,7 +2,7 @@ let questions = [
     {
         num: 1,
         question: "whats your  fname?",
-        answer: 'A.my fname is helen',
+        answer: 'A.my fname is helen.',
         options: [
             "A.my fname is helen.",
             "B.my lname is helen.",
@@ -26,7 +26,7 @@ let questions = [
     {
         num: 3,
         question: "whats your fname?",
-        answer: 'A.my fname is helen',
+        answer: 'A.my fname is helen.',
         options: [
             "A.my fname is helen.",
             "B.my lname is helen.",
@@ -72,7 +72,7 @@ let questions = [
     {
         num: 7,
         question: "whats your fname?",
-        answer: 'A.my fname is helen',
+        answer: 'A.my fname is helen.',
         options: [
             "A.my fname is helen.",
             "B.my lname is helen.",
@@ -83,7 +83,7 @@ let questions = [
     {
         num: 8,
         question: "whats your fname?",
-        answer: 'A.my fname is helen',
+        answer: 'A.my fname is helen.',
         options: [
             "A.my fname is helen.",
             "B.my lname is helen.",
