@@ -3,6 +3,7 @@ const startquez = document.querySelector('.start-quiz');
 const prebtn = document.querySelector('.pre-btn');
 const nextbtn = document.querySelector('.next-btn');
 const quizsec = document.querySelector('quiz-sec');
+const resultbox = document.querySelector('.result-box');
 
 
 
@@ -10,6 +11,7 @@ startbtn.addEventListener('click', () => {
     startquez.classList.add('active');
     showQuestion(0);
     questionCounter(1);
+
 });
 
 
@@ -39,8 +41,7 @@ nextbtn.addEventListener('click', () => {
         questionCounter(questionNum);
     } else {
 
-        // nextbtn.classList.add('reulte');
-        // const result = document.querySelector('.result');
+
         nextbtn.innerHTML = `result`;
         console.log('complated');
         result();
@@ -92,6 +93,7 @@ function optionSelected(answer) {
     if (userAnswer == currectAnswer) {
         console.log('yes');
         answer.classList.add('currect');
+        userscore += 1;
     } else {
         // console.log('no');
         answer.classList.add('incurrect');
@@ -104,8 +106,20 @@ function optionSelected(answer) {
     }
 
 }
+let userscore = 0;
 
 function result() {
+
+    const scoreText = document.querySelector('.score-text');
+    const percentValue = document.querySelector('.percent-value');
+
+    let resPercentValue = (userscore / questions.length) * 100;
+
+    percentValue.textContent = `Score of 100 : ${resPercentValue}%`
+
+
+
+    scoreText.innerHTML = `Score : ${userscore} of ${questions.length} `
     console.log('result')
 }
 

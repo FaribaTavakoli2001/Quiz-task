@@ -26,9 +26,7 @@ body {
     transition: .3s;
     
 }
-.navbar header:hover {
-    color: rgb(255, 0, 162);
-}
+
 
 .home{
     width: 100%;
@@ -90,6 +88,7 @@ body {
     padding: 10px 25px;
     opacity: 0;
     pointer-events: none;
+    margin-top: 40px;
 
 }
 .quiz-sec{
@@ -112,15 +111,15 @@ body {
 
 .option-list .option.currect{
     background: #eccee2;
-    color: rgb(15, 195, 15);
-    border-color: rgb(15, 195, 15) ;
+    color: rgb(32, 162, 218);
+    border-color: rgb(32, 162, 218) ;
 
 }
 
 .option-list .option.incurrect{
     background: #eccee2;
-    color: rgb(218, 32, 32);
-    border-color: rgb(218, 32, 32);
+    color: rgb(32, 162, 218);
+    border-color: rgb(32, 162, 218);
 }
 
 .option-list .option.disable{
@@ -181,3 +180,22 @@ body {
 
 }
 
+.result-box{
+    width: 300px;
+    margin: 10px;
+    padding: 12px;
+    border: 5px solid #999;
+    border-radius: 4px;
+    color: #09001d;
+    font-size: 19px;
+
+}
+.nav-header{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 10px;
+    color: #09001d;
+    font-size: 19px;
+    
+}
