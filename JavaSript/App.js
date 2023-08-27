@@ -8,6 +8,8 @@ const quizsec = document.querySelector('quiz-sec');
 
 startbtn.addEventListener('click', () => {
     startquez.classList.add('active');
+    showQuestion(0);
+    questionCounter(1);
 });
 
 
@@ -17,11 +19,13 @@ prebtn.addEventListener('click', () => {
     if (questionCount < 1) {
 
         console.log(questionCount);
-        questionCount = 1;
+        questionCount = 0;
     }
 
     showQuestion(questionCount);
 });
+
+let questionNum = 1;
 
 nextbtn.addEventListener('click', () => {
     // startquez.classList.add('active');
@@ -30,11 +34,24 @@ nextbtn.addEventListener('click', () => {
 
         questionCount++;
         showQuestion(questionCount);
+
+        questionNum++;
+        questionCounter(questionNum);
     } else {
 
         console.log('complated')
     }
 });
+
+
+function questionCounter(index) {
+    const questionTotal = document.querySelector('.question-total');
+    questionTotal.innerHTML = `${index} of ${questions.length} Questions`;
+}
+
+
+
+
 
 
 const optionlist = document.querySelector('.option-list');
@@ -63,10 +80,10 @@ function showQuestion(index) {
 
 function optionSelected(answer) {
     let userAnswer = answer.innerHTML;
-    // console.log(userAnswer)
+    console.log(typeof (userAnswer))
     let currectAnswer = questions[questionCount].answer;
-    // console.log(currectAnswer);
-    if (userAnswer == currectAnswer) {
+    console.log(typeof (currectAnswer));
+    if (userAnswer === currectAnswer) {
         console.log('yes');
         option.classList.add('currect')
     } else {
