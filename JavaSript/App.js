@@ -99,6 +99,7 @@ function showQuestion(index) {
     }
 
 }
+let incorrectAns = 0;
 
 function optionSelected(answer) {
     let userAnswer = answer.innerHTML;
@@ -111,6 +112,7 @@ function optionSelected(answer) {
         answer.classList.add('currect');
         userscore += 1;
     } else {
+        incorrectAns += 1;
         // console.log('no');
         answer.classList.add('incurrect');
     }
@@ -129,7 +131,7 @@ function result() {
     const scoreText = document.querySelector('.score-text');
     const percentValue = document.querySelector('.percent-value');
 
-    let resPercentValue = (userscore / questions.length) * 100;
+    let resPercentValue = (((userscore * 3) - (incorrectAns)) / ((questions.length) * 3)) * 100;
 
     percentValue.textContent = `Score of 100 : ${resPercentValue}%`;
 
