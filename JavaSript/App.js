@@ -17,13 +17,15 @@ startbtn.addEventListener('click', () => {
 
 prebtn.addEventListener('click', () => {
     questionCount--;
-    nextbtn.innerHTML = `Next`;
-    if (questionCount < 1) {
+    questionNum--;
+    if (questionCount < 1 && questionNum < 1) {
 
         console.log(questionCount);
         questionCount = 0;
+        questionNum = 1;
     }
 
+    questionCounter(questionNum);
     showQuestion(questionCount);
 });
 
@@ -36,18 +38,32 @@ nextbtn.addEventListener('click', () => {
 
         questionCount++;
         showQuestion(questionCount);
-
         questionNum++;
         questionCounter(questionNum);
+
+
     } else {
 
 
-        nextbtn.innerHTML = `result`;
-        console.log('complated');
+        // nextbtn.innerHTML = `result`;
+
         result();
+        showresult();
 
     }
 });
+
+function showresult() {
+
+    const resultbtn = document.querySelector('.effective');
+
+    if (questionCount === questions.length - 1) {
+        nextbtn.innerHTML = `result`;
+        resultbox.classList.add('effective');
+        console.log('complated');
+
+    }
+}
 
 
 function questionCounter(index) {
@@ -91,7 +107,7 @@ function optionSelected(answer) {
 
     // console.log(typeof (currectAnswer));
     if (userAnswer == currectAnswer) {
-        console.log('yes');
+        // console.log('yes');
         answer.classList.add('currect');
         userscore += 1;
     } else {
@@ -115,12 +131,13 @@ function result() {
 
     let resPercentValue = (userscore / questions.length) * 100;
 
-    percentValue.textContent = `Score of 100 : ${resPercentValue}%`
+    percentValue.textContent = `Score of 100 : ${resPercentValue}%`;
 
 
 
-    scoreText.innerHTML = `Score : ${userscore} of ${questions.length} `
-    console.log('result')
+    scoreText.innerHTML = `Score : ${userscore} of ${questions.length} `;
+
 }
+
 
 

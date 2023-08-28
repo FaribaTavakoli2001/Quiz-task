@@ -72,7 +72,7 @@ body {
 .home-content button:hover{
     background-color: #09001d;
     box-shadow: none;
-
+    
 }
 
 .start-quiz{
@@ -80,15 +80,23 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%) scale(.9);
     width: 500px;
     /* height: 500px; */
     background: #eccee2;
     border-radius: 6px;
     padding: 10px 25px;
+    transform: translate(-50% , -50%) scale(.9);
     opacity: 0;
     pointer-events: none;
     margin-top: 40px;
+    
+}
+
+.start-quiz.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50% , -50%) scale(1);
+
 
 }
 .quiz-sec{
@@ -127,14 +135,6 @@ body {
 }
 
 
-
-.start-quiz.active{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50% , -50%) scale(1);
-
-
-}
 
 .start-quiz h2{
     font-size: 30px;
@@ -181,14 +181,32 @@ body {
 }
 
 .result-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:  #c40094;
+    top: 50%;
+    left: 40%;
+    position: absolute;
     width: 300px;
+    height: 300px;
     margin: 10px;
     padding: 12px;
-    border: 5px solid #999;
+    border: 7px solid #fff;
     border-radius: 4px;
     color: #09001d;
     font-size: 19px;
+    transform: translate( 0% , -50%) scale(.9);
+    opacity: 0;
+    pointer-events: none;
 
+}
+
+.result-box.effective{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate( 0% , -50%) scale(1);
 }
 .nav-header{
     display: flex;
