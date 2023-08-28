@@ -132,7 +132,7 @@ function result() {
     const percentValue = document.querySelector('.percent-value');
 
     let resPercentValue = (((userscore * 3) - (incorrectAns)) / ((questions.length) * 3)) * 100;
-
+    Math.floor(resPercentValue);
     percentValue.textContent = `Score of 100 : ${resPercentValue}%`;
 
 
